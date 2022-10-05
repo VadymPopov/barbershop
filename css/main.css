@@ -162,7 +162,8 @@ body {
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition: opacity var(--transition-dur-and-func), visibility var(--transition-dur-and-func);
+    transition: translateX 500ms ease-in-out, visibility 500ms, opacity 500ms;
+    transform: translateX(100%);
   }
   .mobile-menu__close-btn {
     position: absolute;
@@ -216,6 +217,9 @@ body {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
+    overflow: hidden;
+    transition: translateX 500ms ease-in-out, visibility 500ms, opacity 500ms;
+    transform: translateX(0%);
   }
   .mobile-modal-btn {
     margin-bottom: 64px;
@@ -1169,15 +1173,16 @@ input::placeholder {
 }
 
 @media screen and (max-width: 479px) {
+  .services-table-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
   .services-table__name, .services-table__price {
     font-size: 11px;
     font-weight: 400;
     line-height: 1.3636363636;
     letter-spacing: 0.02em;
     color: var(--text-color-dark-bg);
-  }
-  .services-table__row {
-    width: 250px;
   }
   .first-table {
     padding: 5px 10px 15px 20px;
